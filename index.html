@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment-06</title>
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- tailwind css & DaisyUI Links -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font awesome CDN link -->
+    <script
+      src="https://kit.fontawesome.com/7ac0e25b92.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              color: "#0E7A81",
+            },
+            fontFamily: {
+              Lato: "Lato",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-Lato">
+    <!-- banner section start -->
+    <header>
+      <!-- navbar start  -->
+      <nav class="navbar w-11/12 mx-auto mt-4">
+        <div class="navbar-start gap-2">
+          <img src="./images/logo.webp" alt="" />
+          <a class="text-3xl font-black">Peddy</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li
+              class="hover:text-btn-hover hover:font-extrabold hover:text-[#494949] text-[#737373] duration-300 ease-in-out"
+            >
+              <a>Home</a>
+            </li>
+            <li
+              class="hover:text-btn-hover hover:font-extrabold hover:text-[#494949] text-[#737373] duration-300 ease-in-out"
+            >
+              <a>Shop</a>
+            </li>
+            <li
+              class="hover:text-btn-hover hover:font-extrabold hover:text-[#494949] text-[#737373] duration-300 ease-in-out"
+            >
+              <a>Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end gap-5 items-center">
+          <div
+            class="gap-5 text-lg justify-center items-center hidden lg:inline-block"
+          >
+            <i
+              class="fa-regular fa-user h-10 w-10 rounded-full inline-flex justify-center items-center shadow"
+            ></i>
+          </div>
+          <div class="dropdown">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost lg:hidden bg-white rounded-full text-lg shadow"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 right-0 p-2 shadow text-lg font-medium gap-5"
+            >
+              <li class="font-extrabold"><a>Home</a></li>
+              <li class="font-extrabold"><a>Shop</a></li>
+              <li class="font-extrabold"><a>Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- banner start  -->
+      <div class="flex flex-col items-center w-11/12 mx-auto mt-4">
+        <div
+          class="flex flex-col justify-center items-center lg:pb-16 pb-8 space-y-8"
+        >
+          <p class="text-gray-500 font-bold text-2xl">
+            Bringing Families Together 🔥
+          </p>
+          <h1
+            class="lg:font-black font-extrabold lg:text-7xl text-5xl w-3/4 text-center"
+          >
+            Your Path to Adoption Starts Here
+          </h1>
+          <p class="w-3/4 text-center">
+            Discover a variety of lovable pets waiting for their forever homes.
+            Join us in making a difference by providing a safe, caring
+            environment for these animals. Together, we can create lasting bonds
+            and happy lives.
+          </p>
+          <a href="#adopt-container">
+            <button class="btn bg-color text-white hover:text-black font-bold">
+              View More
+            </button>
+          </a>
+        </div>
+        <div>
+          <img src="./images/pet.webp" alt="" />
+        </div>
+      </div>
+    </header>
+    <!-- banner section ends -->
+    <section class="w-11/12 mx-auto mt-4 mb-16">
+      <!-- Adopt Your BestFriend section start  -->
+      <section id="adopt-container">
+        <div
+          class="flex flex-col justify-center items-center lg:pb-16 pb-8 space-y-8 mt-8"
+        >
+          <h1 class="font-black text-5xl text-center">
+            Adopt Your Best Friend
+          </h1>
+          <p class="w-3/4 text-center">
+            Discover a loving companion waiting for you at our shelter. Browse
+            our wide selection of pets in need of a home and find the perfect
+            furry friend to bring joy and companionship into your life.
+          </p>
+        </div>
+        <div
+          id="category"
+          class="lg:flex lg:flex-row grid md:grid-cols-2 gap-3 justify-evenly  items-center"
+        ></div>
+        <!-- Adopt Your BestFriend section ends  -->
+      </section>
+
+      <section class="mt-8">
+        <div class="flex justify-between">
+          <p class="text-2xl font-black">Best Deal For you</p>
+          <button
+            id="sort-btn"
+            class="btn bg-color text-white hover:text-black font-bold"
+          >
+            Sort by Price
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <div class="flex justify-center items-center">
+          <span
+            id="spinner"
+            class="loading loading-bars loading-lg hidden"
+          ></span>
+        </div>
+        <div class="flex lg:flex-row flex-col gap-4 my-12">
+          <div
+            id="pets-content"
+            class="grid lg:grid-cols-12 md:grid-cols-6 grid-cols-1 gap-4 justify-center items-center"
+          ></div>
+
+          <div>
+            <div class="card bg-base-100 shadow-xl flex lg:flex-row flex-col">
+              <div id="markAsImg" class="grid lg:grid-cols-2 grid-cols-2 md:grid-cols-4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- Modal -->
+    <button
+      id="showModalData"
+      class="btn hidden"
+      onclick="customModal.showModal()"
+    >
+      open modal
+    </button>
+    <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="modal-content"></div>
+        <form class="modal-action" method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn w-full bg-[#0E7A811A] text-color font-extrabold">
+            Cancel
+          </button>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog id="my_modal" class="modal">
+      <form
+        method="dialog"
+        class="modal-box px-5 py-10 flex flex-col justify-center items-center"
+      >
+        <div class="text-center">
+          <img class="h-20 w-20" src="./images/handshake.png" alt="" />
+        </div>
+        <h3 class="font-extrabold text-3xl my-5">Congrates</h3>
+        <p class="my-2">Adoption Process is start for your pat</p>
+        <span class="font-bold text-6xl">
+          <span id="countdown"></span>
+        </span>
+      </form>
+    </dialog>
+    <!-- footer section start  -->
+    <footer class="footer bg-black text-white justify-center lg:gap-60 md:gap-20 py-12">
+      <div>
+        <p class="flex items-center gap-3 mb-4 ">
+          <img src="./images/logo.webp" alt="" />
+          <a class="text-3xl font-black">Peddy</a>
+        </p>
+        <p class="text-gray-300">Location: av. Washington 165, NY CA</p>
+        <p class="text-gray-300">54003</p>
+        <p class="text-gray-300">Phone: +31 85 964 47 25</p>
+        <p class="text-gray-300">Email: info@yourdomain.com</p>
+        <p class="text-gray-300">Openings hours: 9.00 AM - 5.00 PM</p>
+      </div>
+      <nav>
+        <h6 class="font-bold text-[18px] mb-4">Useful Links</h6>
+        <a class="link link-hover text-gray-300">Home</a>
+        <a class="link link-hover text-gray-300">About Us</a>
+        <a class="link link-hover text-gray-300">Animals</a>
+        <a class="link link-hover text-gray-300">Foundation</a>
+        <a class="link link-hover text-gray-300">Contact</a>
+      </nav>
+      <form>
+        <h6 class="font-bold text-[18px] mb-4">Drop a Message</h6>
+        <fieldset class="lg:w-80 w-40">
+          <div class="flex flex-col space-y-4">
+            <input
+              type="text"
+              placeholder="Enter your email"
+              class="input input-bordered bg-[#FFFFFF0D] border-2 border-gray-400 join-item"
+            />
+            <button class="btn bg-[#0E7A81] border-none">Subscribe</button>
+          </div>
+        </fieldset>
+      </form>
+    </footer>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>
